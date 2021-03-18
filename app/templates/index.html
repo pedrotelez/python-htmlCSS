@@ -1,11 +1,17 @@
 <!-- Comentário -->
-<html>
-    <head>
 
-    </head>
-    <body>
-        <h1> Ola mundo</h1>
-    </body>
+{% extends "base.html" %}  <!--usa o template base ja criado-->
 
+{% block content %}        <!--substitui o "block content" que esta na base.html-->
 
-</html>
+        <h1>Hello, {{ user.username }}!</h1>
+        <div>
+            {% for post in posts %}
+                <p>{{ post.author.username }} says: <b>{{ post.body }}</b></p>
+            {% else %}
+                <p>Sorry, there are no posts available</p>
+            {% endfor %}
+        </div>
+
+{% endblock %}
+
