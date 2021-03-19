@@ -6,14 +6,14 @@
 
         <h1>Hello, {{ user.username }}!</h1>
         <form action="{{url_for('post')}}" method="POST">
-            <textarea maxlength=140 name="post" placeholder="say something!"></textarea>
+            <textarea maxlength=140 name="post" placeholder="Solta a voz!"></textarea>
             <button>Post</button>
         </form>
         <div>
             {% for post in posts %}
-                <p>{{ post.author.username }} says: <b>{{ post.body }}</b></p>
+                <p>{{ post.author.username }} disse: <b>{{ post.body }}</b></p>
             {% else %}
-                <p>Sorry, there are no posts available</p>
+                <p>Desculpe, não há posts disponíveis!</p>
             {% endfor %}
         </div>
 
