@@ -5,6 +5,10 @@
 {% block content %}        <!--substitui o "block content" que esta na base.html-->
 
         <h1>Hello, {{ user.username }}!</h1>
+        <form action="{{url_for('post')}}" method="POST">
+            <textarea maxlength=140 name="post" placeholder="say something!"></textarea>
+            <button>Post</button>
+        </form>
         <div>
             {% for post in posts %}
                 <p>{{ post.author.username }} says: <b>{{ post.body }}</b></p>
